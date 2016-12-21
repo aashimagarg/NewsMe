@@ -9,9 +9,8 @@ NewsMe uses the [NYTimes API](https://developer.nytimes.com/).
 
 The following **required** functionality is completed:
 
-- [] Chrome extension detects when user has entered facebook into the search bar
+- [ ] Chrome extension detects when user has entered facebook into the search bar
 - [X] Extension redirects user to NYTimes website when a user clicks it's icon
-- [X] 
 
 The following **optional** features are implemented:
 
