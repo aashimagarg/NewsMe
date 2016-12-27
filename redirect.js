@@ -1,4 +1,8 @@
-location.replace('url': chrome.extension.getURL('quiztab.html'))
+// location.replace('http://nytimes.com/')
+
+// var url = chrome.extension.getURL('quiztab.html')
+
+location.replace('chrome-extension://pkibhikenkcngelgmkllkiaafnjaejkj/quiztab.html')
 
 // // get the active tab url
 // chrome.tabs.getCurrent(function(tab){
@@ -29,7 +33,7 @@ location.replace('url': chrome.extension.getURL('quiztab.html'))
 
 // get the active tab url
 // chrome.tabs.getCurrent(function(tab){
-//         console.log(tab.url);
+//         chrome.tabs.update(tab.id, {url: chrome.extension.getURL('quiztab.html')});
 //     }
 // );
 
