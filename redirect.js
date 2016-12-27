@@ -8,5 +8,5 @@ chrome.tabs.getCurrent(function(tab){
 // temporary - when the extension icon is clicked, launch NYTimes
 chrome.browserAction.onClicked.addListener(function(activeTab){
   var newURL = "http://nytimes.com/";
-  chrome.tabs.create({ url: newURL });
+  chrome.tabs.create({'url': chrome.extension.getURL('quiztab.html')});
 });
