@@ -12,11 +12,12 @@
     {
       "matches": ["https://*.facebook.com/*"],
       "js": ["redirect.js"]
+    },
+    {
+      "matches": ["*://*/quiztab.html"],
+      "js": ["quiz.js"]
     }
   ],
-  "background":{
-   "scripts": ["redirect.js"]
-  },
   "permissions": [
     "tabs",
     "activeTab",
