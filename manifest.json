@@ -9,15 +9,23 @@
     "48": "icon.png"
   },
   "content_scripts": [
-    {
-      "matches": ["https://*.facebook.com/*"],
-      "js": ["redirect.js"]
-    },
-    {
-      "matches": ["*://*/quiztab.html"],
-      "js": ["quiz.js"]
+    
+    { // can the content script run on an extension page?
+      //"matches": ["chrome-extension://*/quiztab.html"],
+      "js": ["jquery-3.1.1.js", "quiz.js"],
+      "css": ["quiz.css"],
+      "matches": [ "*://*/*"]
+      
     }
+    // ,
+    // {
+    //   "matches": ["*://*/quiztab.html"],
+    //   "js": ["jquery.js"]
+    // }
   ],
+  "background": {
+    "scripts": ["redirect.js", "quiz.js"]
+  },
   "permissions": [
     "tabs",
     "activeTab",
