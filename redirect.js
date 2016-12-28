@@ -2,7 +2,7 @@
 
 // var url = chrome.extension.getURL('quiztab.html')
 
-location.replace('chrome-extension://pkibhikenkcngelgmkllkiaafnjaejkj/quiztab.html')
+//location.replace('chrome-extension://pkibhikenkcngelgmkllkiaafnjaejkj/quiztab.html')
 
 // // get the active tab url
 // chrome.tabs.getCurrent(function(tab){
@@ -16,13 +16,19 @@ location.replace('chrome-extension://pkibhikenkcngelgmkllkiaafnjaejkj/quiztab.ht
 
 
 // chrome.webNavigation.onCommitted.addListener(function(e){
-//     if (hasHostSuffix(e.url, 'facebook.com')) {
+//     if (hasHostSuffix(e.url, 'facebook.com/')) {
 //     	console.log(e.url);
-//       	var newURL = "http://nytimes.com/";
-//  		chrome.tabs.create({ url: newURL });
+//       	var newURL = chrome.extension.getURL('quiztab.html');
+//  		chrome.tabs.create({'url': newURL});
 //  		console.log(tab.url);
 //     }
 // });
+
+chrome.webNavigation.onCommitted.addListener(function(e) {
+	// Launch quiz hmtl file as a URL
+    var newURL = chrome.extension.getURL('quiztab.html');
+ 	chrome.tabs.create({'url': newURL});
+}, {url: [{hostSuffix: 'facebook.com'}]});
 
 // // temporary - when the extension icon is clicked, launch NYTimes
 // chrome.browserAction.onClicked.addListener(function(activeTab){
