@@ -11,20 +11,15 @@
   "content_scripts": [
     
     { // can the content script run on an extension page?
-      //"matches": ["chrome-extension://*/quiztab.html"],
-      "js": ["jquery-3.1.1.js", "quiz.js"],
+      "matches": ["*://*/quiztab.html"],
       "css": ["quiz.css"],
-      "matches": [ "*://*/*"]
+      "js": ["quiz.js"] //"jquery-3.1.1.js", 
+      //"matches": [ "*://*/*"]
       
     }
-    // ,
-    // {
-    //   "matches": ["*://*/quiztab.html"],
-    //   "js": ["jquery.js"]
-    // }
   ],
   "background": {
-    "scripts": ["redirect.js", "quiz.js"]
+    "scripts": ["redirect.js"]//, "quiz.js"]
   },
   "permissions": [
     "tabs",
